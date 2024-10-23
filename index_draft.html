@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICITRI 2025</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        scroll-behavior: smooth;
+        background: #fefefe;
+      }
+
+      .biru {
+        background-image: url("./back2.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+      }
+
+      section {
+        padding: 40px 0;
+      }
+      .card {
+        margin-bottom: 30px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-radius: 15px;
+        height: 100%;
+      }
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      .card img {
+        height: 240px;
+        object-fit: cover;
+      }
+      footer,
+      .backnya {
+        background: #f5f5f7;
+        color: #161617;
+      }
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        background: #2f318b;
+        color: #fefefe;
+        border: none;
+        border-radius: 50%;
+        padding: 10px 15px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .back-to-top:hover {
+        background: #01a2e9;
+      }
+      .logo {
+        max-width: 100px;
+        margin: 10px;
+      }
+      .accordion .card-header {
+        cursor: pointer;
+      }
+      .accordion .card-header i {
+        margin-right: 10px;
+      }
+      .table-responsive {
+        margin-top: 20px;
+      }
+
+      h2 {
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 2px;
+        padding: 0 20px;
+        text-transform: uppercase;
+      }
+
+      /* Garis di kiri dan kanan dengan simbol berlian */
+      h2::before,
+      h2::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        background-color: #161617;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      h2::before {
+        left: -80px;
+      }
+
+      h2::after {
+        right: -80px;
+      }
+
+      /* Simbol berlian di tengah garis */
+      h2::before::after,
+      h2::after::before {
+        content: "\25C6"; /* Unicode untuk diamond */
+        position: absolute;
+        font-size: 12px;
+        color: black;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .btn {
+        border-radius: 25px; /* Membuat tombol lebih melengkung */
+        padding: 10px 20px; /* Mengatur padding tombol */
+      }
+
+      .table-hover tbody tr:hover {
+        background-color: #f8f9fa; /* Warna latar belakang saat hover */
+      }
+
+      .highlight {
+        font-weight: bold; /* Menonjolkan baris penting */
+        color: #007bff; /* Warna biru yang sama dengan tombol */
+      }
+
+      .map-responsive {
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        position: relative;
+      }
+
+      .map-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+      <div class="container">
+        <a class="navbar-brand" href="#">ICITRI 2025</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#speakers">Speakers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#important-dates">Important Dates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#registration">Registration</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tracks">Tracks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#organizers">Organizers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#committees">Committees</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sticky Menu for Mobile -->
+    <div class="sticky-menu d-lg-none">
+      <div class="container">
+        <ul class="list-inline text-center">
+          <li class="list-inline-item">
+            <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#important-dates"
+              ><i class="fas fa-calendar-alt"></i> Important Dates</a
+            >
+          </li>
+          <li class="list-inline-item">
+            <a href="#registration"
+              ><i class="fas fa-pencil-alt"></i> Registration</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <style>
+      /* Navbar styles */
+      .navbar {
+        z-index: 1030; /* Ensure navbar is above other content */
+        transition: background-color 0.3s ease; /* Smooth background change */
+      }
+
+      /* Change navbar color on scroll */
+      .scrolled {
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* Menu link styles */
+      .nav-link {
+        position: relative;
+        padding: 15px 20px;
+        transition: color 0.3s, transform 0.2s;
+      }
+
+      .nav-link:hover {
+        color: #007bff;
+        transform: scale(1.05);
+      }
+
+      /* Sticky Menu styles */
+      .sticky-menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #f8f9fa;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        z-index: 1020; /* Below navbar */
+        border-top: 2px solid #007bff; /* Top border for separation */
+      }
+
+      /* Icon styles */
+      .sticky-menu i {
+        margin-right: 5px;
+      }
+
+      /* Sticky Menu link styles */
+      .sticky-menu a {
+        color: #333;
+        transition: color 0.3s, transform 0.2s;
+      }
+
+      .sticky-menu a:hover {
+        color: #007bff;
+        transform: scale(1.05);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 576px) {
+        .navbar-nav {
+          text-align: center; /* Center nav links on small screens */
+        }
+        .nav-item {
+          width: 100%; /* Make each nav item full width */
+        }
+        .nav-link {
+          display: block; /* Block display for better touch targets */
+          padding: 10px;
+        }
+      }
+    </style>
+
+    <script>
+      $(document).ready(function () {
+        // Change navbar background on scroll
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 50) {
+            $(".navbar").addClass("scrolled");
+          } else {
+            $(".navbar").removeClass("scrolled");
+          }
+        });
+
+        // Highlight the active menu item
+        $("a.nav-link").on("click", function () {
+          $("a.nav-link").removeClass("active");
+          $(this).addClass("active");
+        });
+
+        // Add scroll event to update active state based on scroll position
+        $(window).on("scroll", function () {
+          var scrollPos = $(document).scrollTop();
+          $("a.nav-link").each(function () {
+            var currLink = $(this);
+            var refElement = $(currLink.attr("href"));
+            if (
+              refElement.position().top <= scrollPos &&
+              refElement.position().top + refElement.height() > scrollPos
+            ) {
+              $("a.nav-link").removeClass("active");
+              currLink.addClass("active");
+            } else {
+              currLink.removeClass("active");
+            }
+          });
+        });
+      });
+    </script>
+
+    <header
+      class="text-center py-5 text-white"
+      style="
+        background-image: url('./back.jpeg');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div style="background: rgba(0, 0, 0, 0.5); padding: 50px 0">
+        <h6 class="font-weight-bold">
+          2025 INTERNATIONAL CONFERENCE ON INFORMATION TECHNOLOGY RESEARCH AND
+          INNOVATION (ICITRI)
+        </h6>
+        <h1 class="mt-3">
+          Harnessing Intelligent Machines for Sustainable Development: <br />
+          Aligning AI with the SDGs
+        </h1>
+        <div id="countdown" class="my-4"></div>
+        <div class="mt-3">
+          <a href="#important-dates" class="btn btn-light"
+            >View Important Dates</a
+          >
+        </div>
+        <div class="mt-3">
+          <i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia
+        </div>
+      </div>
+    </header>
+
+    <script>
+      function countdown() {
+        const eventDate = new Date("September 11, 2025 00:00:00").getTime();
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = `
+                <div class="d-flex justify-content-center flex-wrap">
+                    <div class="mx-2 text-center">
+                        <h4 class="mb-0">${days}</h4>
+                        <small>Days</small>
+                    </div>
+                    <div class="mx-2 text-center">
+                        <h4 class="mb-0">${hours}</h4>
+                        <small>Hours</small>
+                    </div>
+                    <div class="mx-2 text-center">
+                        <h4 class="mb-0">${minutes}</h4>
+                        <small>Minutes</small>
+                    </div>
+                    <div class="mx-2 text-center">
+                        <h4 class="mb-0">${seconds}</h4>
+                        <small>Seconds</small>
+                    </div>
+                </div>
+            `;
+
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown").innerHTML =
+            "The event has started!";
+        }
+      }
+
+      const x = setInterval(countdown, 1000);
+    </script>
+
+    <section id="about" class="container mt-3">
+      <div class="text-center">
+        <h2>About</h2>
+      </div>
+      <p class="lead text-center">
+        Welcome to the 2025 International Conference on Information Technology
+        Research and Innovation (ICITRI). This prestigious event is a hub for
+        sharing groundbreaking research and knowledge in computer and
+        information science. Join us to connect with leading researchers and
+        industry experts, and explore the latest advancements in the field.
+        Note: There is no guarantee that the content will be published in
+        Xplore® and indexed in Scopus.
+      </p>
+    </section>
+
+    <section id="topics" class="container my-1">
+      <div class="text-center">
+        <h2>Conference Topic</h2>
+      </div>
+      <p class="lead text-center">
+        Our main theme for ICITRI 2025 is "Harnessing Intelligent Machines for
+        Sustainable Development: Aligning AI with the SDGs". Dive into
+        discussions on how AI can drive sustainable development and align with
+        global goals.
+      </p>
+    </section>
+
+    <section id="previous-conferences" class="biru my-5">
+      <div
+        class="container"
+        style="
+          background: rgba(0, 0, 0, 0.5);
+          padding: 40px 15px;
+          color: #f5f5f7;
+          border-radius: 10px;
+        "
+      >
+        <div class="text-center">
+          <h2>Previous Conferences</h2>
+        </div>
+        <div class="list-group">
+          <a
+            href="https://icitri.nusamandiri.ac.id/2022/"
+            target="_blank"
+            class="list-group-item list-group-item-action flex-column align-items-start mt-1"
+          >
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">ICITRI 2022</h5>
+              <small>Published in IEEE Xplore</small>
+            </div>
+            <p class="mb-1">
+              Explore the proceedings and highlights of ICITRI 2022.
+            </p>
+            <!-- <small
+              ><a
+                href="https://ieeexplore.ieee.org/xpl/conhome/9970201/proceeding"
+                target="_blank"
+                >View Proceedings <i class="fas fa-arrow-right"></i></a
+            ></small> -->
+          </a>
+          <a
+            href="https://icitri.nusamandiri.ac.id/2023/"
+            target="_blank"
+            class="list-group-item list-group-item-action flex-column align-items-start mt-1"
+          >
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">ICITRI 2023</h5>
+              <small>Published in IEEE Xplore</small>
+            </div>
+            <p class="mb-1">
+              Discover the key moments and research presented at ICITRI 2023.
+            </p>
+            <!-- <small
+              ><a
+                href="https://ieeexplore.ieee.org/xpl/conhome/10249212/proceeding"
+                target="_blank"
+                >View Proceedings <i class="fas fa-arrow-right"></i></a
+            ></small> -->
+          </a>
+          <a
+            href="https://icitri.nusamandiri.ac.id/2024/"
+            target="_blank"
+            class="list-group-item list-group-item-action flex-column align-items-start mt-1"
+          >
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">ICITRI 2024</h5>
+              <small>Published in IEEE Xplore</small>
+            </div>
+            <p class="mb-1">
+              Review the latest advancements and discussions from ICITRI 2024.
+            </p>
+            <!-- <small
+              ><a
+                href="https://ieeexplore.ieee.org/xpl/conhome/10698751/proceeding"
+                target="_blank"
+                >View Proceedings <i class="fas fa-arrow-right"></i></a
+            ></small> -->
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="speakers" class="container" style="padding: 50px 0">
+      <div class="text-center">
+        <h2 class="mb-5">Speakers</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div
+            class="card"
+            style="
+              border: none;
+              border-radius: 15px;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+              transition: transform 0.3s, box-shadow 0.3s;
+            "
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0, 0, 0, 0.2)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.1)';"
+          >
+            <img
+              src="./pak_hilman_2.png"
+              class="card-img-top"
+              alt="Prof. Dr. Hilman F. Pardede"
+              style="
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                height: 300px;
+                object-fit: cover;
+              "
+            />
+            <div class="card-body" style="text-align: center">
+              <h5 class="card-title" style="font-weight: 500">
+                Prof. Dr. Hilman F. Pardede
+              </h5>
+              <p class="card-text" style="font-size: 0.9rem">
+                National Research and Innovation Agency of Indonesia, Indonesia
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div
+            class="card"
+            style="
+              border: none;
+              border-radius: 15px;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+              transition: transform 0.3s, box-shadow 0.3s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0, 0, 0, 0.2)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.1)';"
+          >
+            <img
+              src="./pak_haris_2.png"
+              class="card-img-top"
+              alt="Dr. Muhammad Haris"
+              style="
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                height: 300px;
+                object-fit: cover;
+              "
+            />
+            <div
+              class="card-frame"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border: 4px solid rgba(255, 255, 255, 0.5);
+                border-radius: 15px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s;
+                pointer-events: none;
+                z-index: 1;
+              "
+            ></div>
+            <div class="card-body" style="text-align: center; z-index: 2">
+              <h5 class="card-title" style="font-weight: 500">
+                Dr. Muhammad Haris
+              </h5>
+              <p class="card-text" style="font-size: 0.9rem">
+                Universitas Nusa Mandiri
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prof_ Dr_ Ir_ Dwiza Riana, S_Si, MM, M_Kom, IPU, ASEAN_Eng -->
+        <div class="col-md-4">
+          <div
+            class="card"
+            style="
+              border: none;
+              border-radius: 15px;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+              transition: transform 0.3s, box-shadow 0.3s;
+            "
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0, 0, 0, 0.2)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.1)';"
+          >
+            <img
+              src="./prof_nikou_2.png"
+              class="card-img-top"
+              alt="Prof. Christophoros Nikou"
+              style="
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                height: 300px;
+                object-fit: cover;
+              "
+            />
+            <div class="card-body" style="text-align: center">
+              <h5 class="card-title" style="font-weight: 500">
+                Prof. Christophoros Nikou
+              </h5>
+              <p class="card-text" style="font-size: 0.9rem">
+                Ioannina University, Greece
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="important-dates" class="container my-5">
+      <div class="text-center mb-4">
+        <h2>Important Dates</h2>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th>Event</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="date-row" data-date="2025-05-10">
+              <td>Paper Submit</td>
+              <td>10 May 2025</td>
+            </tr>
+            <tr class="date-row" data-date="2025-07-05">
+              <td>Notification of Paper Acceptance</td>
+              <td>05 July 2025</td>
+            </tr>
+            <tr class="date-row" data-date="2025-07-15">
+              <td>Camera Ready</td>
+              <td>15 July 2025</td>
+            </tr>
+            <tr class="date-row highlight" data-date="2025-09-11">
+              <td>Conference Day</td>
+              <td>11-12 September 2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-center mt-3">
+        <a
+          href="https://calendar.google.com/calendar/r/eventedit?text=ICITRI+2025+Conference&dates=20250911/20250912&details=Join+us+for+the+ICITRI+2025+Conference&location=St.+Raya+Jatiwaringin,+Cipinang+Melayu,+Makasar,+East+Jakarta+City,+Jakarta,+Indonesia"
+          class="btn btn-primary"
+          target="_blank"
+        >
+          <i class="fas fa-calendar-plus"></i> Add to Google Calendar
+        </a>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="#registration" class="btn btn-success">
+          <i class="fas fa-user-edit"></i> Register Now
+        </a>
+      </div>
+    </section>
+
+    <section id="registration" class="biru my-1">
+      <div
+        class="container"
+        style="
+          background: rgba(0, 0, 0, 0.5);
+          padding: 40px 15px;
+          border-radius: 10px;
+        "
+      >
+        <section>
+          <div class="text-center mb-4">
+            <h2 class="text-white">Registration</h2>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <ul class="list-group">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Students
+                  <span>USD 200 / Rp. 2.200.000</span>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  IEEE Member
+                  <span>USD 200 / Rp 2.200.000</span>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Presenter
+                  <span>USD 225 / Rp 2.500.000</span>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Second Registered Paper
+                  <span>USD 100 / Rp 1.100.000</span>
+                </li>
+              </ul>
+              <div class="text-center mt-4">
+                <a href="https://edas.info/N31844" class="btn btn-success">
+                  <i class="fas fa-user-edit"></i> Register Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="guidelines">
+          <div class="text-center">
+            <h2 class="text-white mb-3">Guidelines</h2>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">AUTHOR GUIDELINE</h5>
+                  <p>
+                    Please prepare your manuscripts according to the IEEE
+                    Conference Paper format. The manuscript should be 4 to 6
+                    pages long. Research paper should explore a specific
+                    technology problem and propose a complete solution to it,
+                    with experimental results.
+                  </p>
+                  <div class="text-center mt-4">
+                    <a
+                      href="https://drive.google.com/drive/folders/1VBcv6jGNgkz39QilzCmZz8vROvgue08W"
+                      class="btn btn-secondary"
+                    >
+                      <i class="fas fa-sticky-note"></i> Download Template
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">ICITRI POLICY</h5>
+                  <p>
+                    Your submission will be blind-reviewed by at least three
+                    independent reviewers. The decision on your paper will be
+                    informed via email by the dates listed in the Home section.
+                    No guarantee that the content will be published in Xplore®
+                    and indexed in Scopus.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">NO-SHOW POLICY</h5>
+                  <p>
+                    The accepted papers that are not presented in the conference
+                    will not be included in the final Proceeding and it will not
+                    be submitted for inclusion into IEEE Xplore.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="tracks" class="container">
+      <div class="text-center mb-4">
+        <h2>Tracks</h2>
+      </div>
+      <div class="accordion" id="conferenceTracks">
+        <div class="card">
+          <div
+            class="card-header"
+            id="headingOne"
+            data-toggle="collapse"
+            data-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            <h4 class="mb-0">
+              <i class="fas fa-laptop-code"></i> Informatics Track
+            </h4>
+          </div>
+          <div
+            id="collapseOne"
+            class="collapse show"
+            aria-labelledby="headingOne"
+            data-parent="#conferenceTracks"
+          >
+            <div class="card-body">
+              <p>Details about Informatics Track:</p>
+              <ul>
+                <li>Artificial Intelligence and Machine Learning</li>
+                <li>Mobile and Cloud Computing</li>
+                <li>Data Mining</li>
+                <li>Human-machine Systems</li>
+                <li>Cybernetics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="card">
+          <div
+            class="card-header"
+            id="headingTwo"
+            data-toggle="collapse"
+            data-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            <h4 class="mb-0">
+              <i class="fas fa-network-wired"></i> Computer Network Track
+            </h4>
+          </div>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            aria-labelledby="headingTwo"
+            data-parent="#conferenceTracks"
+          >
+            <div class="card-body">Details about Computer Network Track.</div>
+          </div>
+        </div> -->
+
+        <div class="card">
+          <div
+            class="card-header"
+            id="headingThree"
+            data-toggle="collapse"
+            data-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            <h4 class="mb-0">
+              <i class="fas fa-image"></i> Image Processing and Computer Vision
+              Track
+            </h4>
+          </div>
+          <div
+            id="collapseThree"
+            class="collapse"
+            aria-labelledby="headingThree"
+            data-parent="#conferenceTracks"
+          >
+            <div class="card-body">
+              <p>Details about Image Processing and Computer Vision Track:</p>
+              <ul>
+                <li>Image Enhancement</li>
+                <li>Image Preprocessing, Registration & Fusion</li>
+                <li>
+                  Image Classification, Segmentation and Pattern Recognition
+                </li>
+                <li>Audio and Video Processing, Motion and Tracking</li>
+                <li>Signal and Speech Processing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div
+            class="card-header"
+            id="headingFour"
+            data-toggle="collapse"
+            data-target="#collapseFour"
+            aria-expanded="false"
+            aria-controls="collapseFour"
+          >
+            <h4 class="mb-0">
+              <i class="fas fa-cog"></i> Software Engineering Track
+            </h4>
+          </div>
+          <div
+            id="collapseFour"
+            class="collapse"
+            aria-labelledby="headingFour"
+            data-parent="#conferenceTracks"
+          >
+            <div class="card-body">
+              <p>Details about Software Engineering Track:</p>
+              <ul>
+                <li>Model-Driven Software Engineering</li>
+                <li>Requirements Engineering</li>
+                <li>Component-based Software Engineering</li>
+                <li>Knowledge-based Software Engineering</li>
+                <li>Experimental Software Engineering</li>
+                <li>Theoretical Foundations of Software Engineering</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div
+            class="card-header"
+            id="headingFive"
+            data-toggle="collapse"
+            data-target="#collapseFive"
+            aria-expanded="false"
+            aria-controls="collapseFive"
+          >
+            <h4 class="mb-0">
+              <i class="fas fa-stethoscope"></i> Biomedical Informatics Track
+            </h4>
+          </div>
+          <div
+            id="collapseFive"
+            class="collapse"
+            aria-labelledby="headingFive"
+            data-parent="#conferenceTracks"
+          >
+            <div class="card-body">
+              Details about Biomedical Informatics Track.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="organizers" class="blue" style="padding: 50px 0">
+      <div
+        class="container"
+        style="
+          background: rgba(255, 255, 255, 0.9);
+          padding: 5% 3%;
+          color: #333;
+          border-radius: 15px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        "
+      >
+        <section>
+          <div class="text-center">
+            <h2 class="mb-3">Organizers</h2>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              <div
+                class="card"
+                style="
+                  background-color: rgba(255, 255, 255, 0.2);
+                  border: none;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                  border-radius: 10px;
+                  overflow: hidden;
+                  transition: transform 0.3s, box-shadow 0.3s;
+                "
+                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0, 0, 0, 0.2)';"
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)';"
+              >
+                <img
+                  src="https://faruq1997.github.io/icitri2022/logo-unm.webp"
+                  class="card-img-top"
+                  alt="Universitas Nusa Mandiri"
+                  style="
+                    border-bottom: 1px solid #eee;
+                    height: 240px;
+                    object-fit: contain;
+                    padding: 0 10px;
+                  "
+                />
+                <div class="card-body" style="text-align: center">
+                  <p style="font-size: 1.1rem; font-weight: 500">
+                    Universitas Nusa Mandiri
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div
+                class="card"
+                style="
+                  background-color: rgba(255, 255, 255, 0.2);
+                  border: none;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                  border-radius: 10px;
+                  overflow: hidden;
+                  transition: transform 0.3s, box-shadow 0.3s;
+                "
+                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0, 0, 0, 0.2)';"
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)';"
+              >
+                <img
+                  src="https://faruq1997.github.io/icitri2022/logo-lppm.webp"
+                  class="card-img-top"
+                  alt="LPPM UNM"
+                  style="
+                    border-bottom: 1px solid #eee;
+                    height: 240px;
+                    object-fit: contain;
+                    padding: 0 10px;
+                  "
+                />
+                <div class="card-body" style="text-align: center">
+                  <p style="font-size: 1.1rem; font-weight: 500">LPPM UNM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="sponsors">
+          <div class="text-center">
+            <h2 class="mb-3">Sponsors</h2>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div
+                class="card"
+                style="
+                  background-color: rgba(255, 255, 255, 0.2);
+                  border: none;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                  border-radius: 10px;
+                  overflow: hidden;
+                  transition: transform 0.3s, box-shadow 0.3s;
+                "
+                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0, 0, 0, 0.2)';"
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)';"
+              >
+                <img
+                  src="https://faruq1997.github.io/icitri2022/IEEE_Section.webp"
+                  class="card-img-top"
+                  alt="IEEE Section"
+                  style="
+                    border-bottom: 1px solid #eee;
+                    height: 320px;
+                    object-fit: contain;
+                    padding: 0 10px;
+                  "
+                />
+                <div class="card-body" style="text-align: center">
+                  <p style="font-size: 1.3rem; font-weight: 500">
+                    IEEE Section
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="jointly-organized" style="margin-top: 60px">
+          <div class="text-center">
+            <h2 class="mb-3">Jointly Organized By</h2>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-3">
+              <div
+                class="card"
+                style="
+                  background-color: rgba(255, 255, 255, 0.2);
+                  border: none;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                  border-radius: 10px;
+                  overflow: hidden;
+                  transition: transform 0.3s, box-shadow 0.3s;
+                "
+                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0, 0, 0, 0.2)';"
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)';"
+              >
+                <img
+                  src="https://faruq1997.github.io/icitri2022/logo-ubsi.webp"
+                  class="card-img-top"
+                  alt="UBSI"
+                  style="
+                    border-bottom: 1px solid #eee;
+                    height: 240px;
+                    object-fit: contain;
+                  "
+                />
+                <div class="card-body" style="text-align: center">
+                  <p style="font-size: 1.1rem; font-weight: 500">UBSI</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div
+                class="card"
+                style="
+                  background-color: rgba(255, 255, 255, 0.2);
+                  border: none;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                  border-radius: 10px;
+                  overflow: hidden;
+                  transition: transform 0.3s, box-shadow 0.3s;
+                "
+                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0, 0, 0, 0.2)';"
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)';"
+              >
+                <img
+                  src="https://www.cyber-univ.com/images/logo_cyber.png"
+                  class="card-img-top"
+                  alt="Cyber University"
+                  style="
+                    border-bottom: 1px solid #eee;
+                    height: 240px;
+                    object-fit: contain;
+                  "
+                />
+                <div class="card-body" style="text-align: center">
+                  <p style="font-size: 1.1rem; font-weight: 500">
+                    Cyber University
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div
+                class="card"
+                style="
+                  background-color: rgba(255, 255, 255, 0.2);
+                  border: none;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                  border-radius: 10px;
+                  overflow: hidden;
+                  transition: transform 0.3s, box-shadow 0.3s;
+                "
+                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0, 0, 0, 0.2)';"
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)';"
+              >
+                <img
+                  src="https://faruq1997.github.io/icitri2022/logo-apt-jkt.webp"
+                  class="card-img-top"
+                  alt="Aptikom Jakarta"
+                  style="
+                    border-bottom: 1px solid #eee;
+                    height: 240px;
+                    object-fit: contain;
+                    padding: 0 10px;
+                  "
+                />
+                <div class="card-body" style="text-align: center">
+                  <p style="font-size: 1.1rem; font-weight: 500">
+                    Aptikom Jakarta
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div
+                class="card"
+                style="
+                  background-color: rgba(255, 255, 255, 0.2);
+                  border: none;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                  border-radius: 10px;
+                  overflow: hidden;
+                  transition: transform 0.3s, box-shadow 0.3s;
+                "
+                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0, 0, 0, 0.2)';"
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)';"
+              >
+                <img
+                  src="https://faruq1997.github.io/icitri2022/IEEE%20STUDENT%20BRANCH%20-%20UNM.webp"
+                  class="card-img-top"
+                  alt="IEEE Student Branch - UNM"
+                  style="
+                    border-bottom: 1px solid #eee;
+                    height: 240px;
+                    object-fit: contain;
+                    padding: 0 10px;
+                  "
+                />
+                <div class="card-body" style="text-align: center">
+                  <p style="font-size: 1.1rem; font-weight: 500">
+                    IEEE Student Branch - UNM
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="committees" class="container">
+      <div class="text-center">
+        <h2>COMMITTEES</h2>
+      </div>
+      <div class="mt-separator"></div>
+
+      <div>
+        <h3>Advisors:</h3>
+        <ul>
+          <li>Dwiza Riana - Universitas Nusa Mandiri, Indonesia</li>
+          <li>
+            Gamantyo Hendrantoro - Institut Teknologi Sepuluh Nopember,
+            Indonesia
+          </li>
+          <li>
+            Chaeriah Bin Ali Wael - National Research and Innovation Agency of
+            Indonesia, Indonesia
+          </li>
+        </ul>
+
+        <h3>General Chair:</h3>
+        <ul>
+          <li>
+            Lindung Parningotan Manik - Universitas Nusa Mandiri, Indonesia
+          </li>
+        </ul>
+
+        <h3>Secretary Chair:</h3>
+        <ul>
+          <li>Arif Hidayat - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Nita Merlina - Universitas Nusa Mandiri, Indonesia</li>
+        </ul>
+
+        <h3>Treasures:</h3>
+        <ul>
+          <li>Tati Mardiana - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Daning Nur Sulistyowati - Universitas Nusa Mandiri, Indonesia</li>
+        </ul>
+
+        <h3>Publication Chair:</h3>
+        <ul>
+          <li>
+            Agus Subekti - National Research and Innovation Agency of Indonesia,
+            Indonesia
+          </li>
+          <li>Andi Saryoko - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Jufriadif Na`am - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Siti Nurhasanah Nugraha - Universitas Nusa Mandiri, Indonesia</li>
+        </ul>
+
+        <h3>Publicity and Promotion Chair:</h3>
+        <ul>
+          <li>Arfhan Prasetyo - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Eni Heni Hermaliani - Universitas Nusa Mandiri Indonesia</li>
+          <li>Faruq Aziz - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Syaifur Rahmatullah - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Yudhistira - Universitas Bina Sarana Informatika, Indonesia</li>
+          <li>Imam Nawawi - Universitas Bina Sarana Informatika, Indonesia</li>
+        </ul>
+
+        <h3>Technical Program Committee:</h3>
+        <ul>
+          <li>Hadhrami Ab Ghani - Universiti Malaysia Kelantan, Malaysia</li>
+          <li>
+            Ghulam Abbas - GIK Institute of Engineering Sciences & Technology,
+            Pakistan
+          </li>
+          <li>
+            Munaisyah Abdullah - Malaysia Institute of Information Technology,
+            Malaysia
+          </li>
+          <li>
+            Zubaile Abdullah - Universiti Tun Hussein Onn Malaysia, Malaysia
+          </li>
+          <li>Taufik Abidin - Universitas Syiah Kuala, Indonesia</li>
+          <li>Azlin Ahmad - Universiti Teknologi MARA, Malaysia</li>
+          <li>
+            Ily Amalina Ahmad Sabri - Universiti Malaysia Terengganu, Malaysia
+          </li>
+          <li>Ratna Aisuwarya - Universitas Andalas, Indonesia</li>
+          <li>
+            Zaenal Akbar - National Research and Innovation Agency, Indonesia
+          </li>
+          <li>Wikky Al Maki - Telkom University, Indonesia</li>
+          <li>Hasimah Ali - University Malaysia Perlis, Malaysia</li>
+          <li>
+            Mila Anasanti - Imperial College London, United Kingdom (Great
+            Britain)
+          </li>
+          <li>
+            Apriandy Angdresey - De La Salle Catholic University, Indonesia
+          </li>
+          <li>Anton - Universitas Nusa Mandiri Indonesia, Indonesia</li>
+          <li>
+            Ilham Ari Elbaith Zaeni - Universitas Negeri Malang, Indonesia
+          </li>
+          <li>Samsul Arifin - Institut Teknologi Sains Bandung, Indonesia</li>
+          <li>Media Ayu - Sampoerna University, Indonesia</li>
+          <li>Ferddie Canlas - Muscat College, Oman</li>
+          <li>Weng Howe Chan - Universiti Teknologi Malaysia, Malaysia</li>
+          <li>
+            Muruga Chinniah - Universiti Teknologi MARA (UiTMCJ), Malaysia
+          </li>
+          <li>Akhmad Dahlan - Universitas Amikom Yogyakarta, Indonesia</li>
+          <li>
+            Vinh Dang - Industrial University of Ho Chi Minh City, Vietnam
+          </li>
+          <li>Luca Davoli - University of Parma, Italy</li>
+          <li>Arawinda Dinakaramani - University of Indonesia, Indonesia</li>
+          <li>
+            Esmeralda Djamal - Universitas Jenderal Achmad Yani, Indonesia
+          </li>
+          <li>
+            Hanif Fakhrurroja - National Research and Innovation Agency,
+            Indonesia
+          </li>
+          <li>M. Febriantono - Bina Nusantara University, Indonesia</li>
+          <li>Evita Fitri - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Frieyadie - Universiti Kuala Lumpur, Malaysia</li>
+          <li>Windu Gata - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Sri Hadianti - Universitas Nusa Mandiri, Indonesia</li>
+          <li>
+            Shidiq Hakim - National Research and Innovation Agency (BRIN),
+            Indonesia
+          </li>
+          <li>Muhammad Haris - Universitas Nusa Mandiri, Indonesia</li>
+          <li>
+            Mohd Hassan - International Islamic University Malaysia, Malaysia
+          </li>
+          <li>
+            Deden Hidayat - National Research and Innovation Agency (BRIN),
+            Indonesia
+          </li>
+          <li>Inne Husein - Telkom University, Indonesia</li>
+          <li>
+            Amir Hussin - International Islamic University Malaysia, Malaysia
+          </li>
+          <li>Tran Huynh - FPT University, Vietnam</li>
+          <li>Paulus Insap Santosa - Universitas Gadjah Mada, Indonesia</li>
+          <li>Nanang Ismail - UIN Bandung, Indonesia</li>
+          <li>Jupriyadi - Universitas Teknokrat Indonesia, Indonesia</li>
+          <li>Fatan Kasyidi - Universitas Jenderal Achmad Yani, Indonesia</li>
+          <li>Feng Ke - South China University of Technology, China</li>
+          <li>Isman Kurniawan - Telkom University, Indonesia</li>
+          <li>Bernadetta Kwintiana - University of Stuttgart, Germany</li>
+          <li>Dewi Liliana - State Polytechnic of Jakarta, Indonesia</li>
+          <li>
+            Lindung Manik - National Research and Innovation Agency, Indonesia
+          </li>
+          <li>Linda Marlinda - Universitas Nusa Mandiri, Indonesia</li>
+          <li>I Made Dendi Maysanjaya - Universitas Gadjah Mada, Indonesia</li>
+          <li>
+            Siti Azreena Mubin - Asia Pacific University of Technology &
+            Innovation (APU), Malaysia
+          </li>
+          <li>Zuriani Mustaffa - Universiti Malaysia Pahang, Malaysia</li>
+          <li>
+            Jufriadif Na`am - Universitas Putra Indonesia YPTK Padang, Indonesia
+          </li>
+          <li>Erna Nababan - Universitas Sumatera Utara, Indonesia</li>
+          <li>Christophoros Nikou - University of Ioannina, Greece</li>
+          <li>
+            Hilman F. Pardede - National Research and Innovation Agency of
+            Indonesia, Indonesia
+          </li>
+          <li>
+            Esa Prakasa - National Research and Innovation Agency (BRIN),
+            Indonesia
+          </li>
+          <li>Kartika Purwandari - Bina Nusantara University, Indonesia</li>
+          <li>
+            Zico Pratama Putra - Queen Mary University of London, United Kingdom
+            (Great Britain)
+          </li>
+          <li>Aji Putrada - Telkom University, Indonesia</li>
+          <li>Indra Raharjana - Universitas Airlangga, Indonesia</li>
+          <li>Yudi Ramdhani - ARS University, Indonesia</li>
+          <li>
+            Yan Rianto - Lembaga Ilmu Pengetahuan Indonesia (LIPI), Indonesia
+          </li>
+          <li>
+            Risnandar Risnandar - The IVDA-Research Group-Research Center for
+            Information and Data Sciences-BRIN, Indonesia
+          </li>
+          <li>
+            Slamet Riyanto - National Research and Innovation Agency, Indonesia
+          </li>
+          <li>
+            Siti Rochimah - Institut Teknologi Sepuluh Nopember, Indonesia
+          </li>
+          <li>
+            Didi Rosiyadi - National Research and Innovation Agency, Indonesia
+          </li>
+          <li>
+            Rifki Sadikin - Research Center for Informatics, LIPI, Indonesia
+          </li>
+          <li>Rizauddin Saian - Universiti Teknologi MARA, Malaysia</li>
+          <li>
+            Nurul Saleh - Institute of Industrial Revolution 4.0, Malaysia
+          </li>
+          <li>
+            W. S. Mada Sanjaya - UIN Sunan Gunung Djati Bandung, Indonesia
+          </li>
+          <li>Andi Saryoko - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Ramadhona Saville - Tokyo University of Agriculture, Japan</li>
+          <li>Anindita Septiarini - Universitas Mulawarman, Indonesia</li>
+          <li>
+            Ahmad Setiadi - Universitas Bina Sarana Informatika, Indonesia
+          </li>
+          <li>Foni Setiawan - Universitas Ibn Khaldun, Indonesia</li>
+          <li>
+            Al Hafiz Akbar Maulana Siagian - National Research and Innovation
+            Agency, Indonesia
+          </li>
+          <li>
+            Lya Hulliyyatus Suadaa - STIS Polytechnic of Statistics, Indonesia
+          </li>
+          <li>
+            Agus Subekti - National Research and Innovation Agency (BRIN),
+            Indonesia
+          </li>
+          <li>Surjandy - Bina Nusantara University, Indonesia</li>
+          <li>Vera Suryani - Universitas Telkom, Indonesia</li>
+          <li>Suyoto - Lembaga Ilmu Pengetahuan Indonesia, Indonesia</li>
+          <li>
+            Arida Syafiandini - Indonesian Institute of Sciences, Indonesia
+          </li>
+          <li>
+            Rajermani Thinakaran - INTI International University, Malaysia
+          </li>
+          <li>Sabrina Tiun - Universiti Kebangsaan Malaysia, Malaysia</li>
+          <li>Tony - Tarumanagara University, Indonesia</li>
+          <li>Nur Uddin - Universitas Pembangunan Jaya, Indonesia</li>
+          <li>Widodo Widodo - Universitas Negeri Jakarta, Indonesia</li>
+          <li>Setyawan Widyarto - Universiti Selangor, Malaysia</li>
+          <li>Kemas Wiharja - Telkom University, Indonesia</li>
+          <li>Farizah Yunus - Universiti Malaysia Terengganu, Malaysia</li>
+          <li>Zahir Zainuddin - Hasanuddin University, Indonesia</li>
+        </ul>
+
+        <h3>Event Management Committee:</h3>
+        <ul>
+          <li>
+            Achmad Baroqah Pohan - Universitas Bina Sarana Informatika,
+            Indonesia
+          </li>
+          <li>Ida Zuniarti - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Lia Mazia - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Instianti Elyana - Universitas Nusa Mandiri Indonesia</li>
+          <li>
+            Sukmawati Anggraeni Putri - Universitas Nusa Mandiri, Indonesia
+          </li>
+          <li>Santoso Setiawan - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Linda Marlinda - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Ridan Nurfalah - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Deni Gunawan - Universitas Bina Sarana Informatika, Indonesia</li>
+          <li>
+            Kudiantoro Widianto - Universitas Bina Sarana Informatika, Indonesia
+          </li>
+          <li>M. Iqbal Alifudin - Universitas Nusa Mandiri, Indonesia</li>
+          <li>
+            Sofian Wira Hadi - Universitas Bina Sarana Informatika, Indonesia
+          </li>
+          <li>
+            Robi Aziz Zuama - Universitas Bina Sarana Informatika, Indonesia
+          </li>
+          <li>Mohamad Abi - Universitas Bina Sarana Informatika, Indonesia</li>
+          <li>
+            Ade Kurniawan - Universitas Bina Sarana Informatika, Indonesia
+          </li>
+          <li>
+            Syaifur Rahmatullah Abdul Rojak - Universitas Nusa Mandiri,
+            Indonesia
+          </li>
+          <li>Naufal Azhar Fadhilah - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Bryan Givan - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Popi Ismayanti - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Bakhtiar Rifai - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Herman Kuswanto - Universitas Nusa Mandiri, Indonesia</li>
+          <li>
+            Taufik Rahman - Universitas Bina Sarana Informatika, Indonesia
+          </li>
+          <li>
+            Lasman Effendi - Universitas Bina Sarana Informatika, Indonesia
+          </li>
+          <li>
+            Apri Istiarto - Universitas Bina Sarana Informatika, Indonesia
+          </li>
+          <li>Muji Ernawati - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Novita Herlizah - Universitas Nusa Mandiri, Indonesia</li>
+          <li>Jimmi - Universitas Bina Sarana Informatika, Indonesia</li>
+          <li>
+            Aloysius Rangga - Universitas Bina Sarana Informatika, Indonesia
+          </li>
+          <li>
+            Unpris Yastanti - Universitas Bina Sarana Informatika, Indonesia
+          </li>
+          <li>
+            Ary Iswanto Wibowo - Universitas Bina Sarana Informatika, Indonesia
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="venue" class="backnya mt-5">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2 class="text-primary">Event Venue</h2>
+          <p class="lead">Join us at the heart of innovation!</p>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="lead">
+              <strong>Universitas Nusa Mandiri</strong> <br />
+              Jakarta, Indonesia <br />
+              St. Raya Jatiwaringin, Cipinang Melayu, Makasar, East Jakarta
+              City, Jakarta, Indonesia.
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:icitri@nusamandiri.ac.id" class="text-primary"
+                >icitri@nusamandiri.ac.id</a
+              >
+            </p>
+            <p>
+              <strong>Contact Person:</strong>
+              <span class="d-block">
+                <i class="fab fa-whatsapp text-success"></i>
+                <a
+                  href="https://wa.me/6281213488757?text=ICITRI2024"
+                  target="_blank"
+                  class="text-primary"
+                  >Daning Nur Sulistyowati</a
+                >
+              </span>
+              <span class="d-block">
+                <i class="fab fa-whatsapp text-success"></i>
+                <a
+                  href="https://wa.me/6285311336088?text=ICITRI2024"
+                  target="_blank"
+                  class="text-primary"
+                  >Ridan Nurfalah</a
+                >
+              </span>
+            </p>
+          </div>
+          <div class="col-md-6">
+            <div class="map-responsive">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63462.027859113936!2d106.83964403067925!3d-6.213944469902698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f32c339cdd87%3A0x279ceb8fffbb3057!2sUniversitas%20Nusa%20Mandiri%20Jatiwaringin!5e0!3m2!1sid!2sid!4v1674827248865!5m2!1sid!2sid"
+                width="100%"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+    </section>
+
+    <footer class="text-center">
+      <p>© ICITRI 2025. All rights reserved.</p>
+    </footer>
+
+    <button class="back-to-top" onclick="scrollToTop()">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      $(document).scroll(function () {
+        var y = $(this).scrollTop();
+        if (y > 200) {
+          $(".back-to-top").fadeIn();
+        } else {
+          $(".back-to-top").fadeOut();
+        }
+      });
+
+      function scrollToTop() {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+      }
+
+      // Smooth scroll untuk tautan anchor
+      $('a[href^="#"]').on("click", function (event) {
+        var target = $(this.getAttribute("href"));
+        if (target.length) {
+          event.preventDefault();
+          $("html, body").stop().animate(
+            {
+              scrollTop: target.offset().top,
+            },
+            1000
+          ); // Durasi dalam milidetik (1000ms = 1 detik)
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const rows = document.querySelectorAll(".date-row");
+        const today = new Date().toISOString().split("T")[0];
+
+        rows.forEach((row) => {
+          const date = row.getAttribute("data-date");
+          if (date < today) {
+            row.style.textDecoration = "line-through";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
