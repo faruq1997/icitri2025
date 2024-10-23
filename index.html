@@ -81,48 +81,6 @@
         margin-top: 20px;
       }
 
-      h2 {
-        position: relative;
-        display: inline-block;
-        text-align: center;
-        font-weight: bold;
-        letter-spacing: 2px;
-        padding: 0 20px;
-        text-transform: uppercase;
-      }
-
-      /* Garis di kiri dan kanan dengan simbol berlian */
-      h2::before,
-      h2::after {
-        content: "";
-        position: absolute;
-        width: 40px;
-        height: 2px;
-        background-color: #161617;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-
-      h2::before {
-        left: -80px;
-      }
-
-      h2::after {
-        right: -80px;
-      }
-
-      /* Simbol berlian di tengah garis */
-      h2::before::after,
-      h2::after::before {
-        content: "\25C6"; /* Unicode untuk diamond */
-        position: absolute;
-        font-size: 12px;
-        color: black;
-        top: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
       .btn {
         border-radius: 25px; /* Membuat tombol lebih melengkung */
         padding: 10px 20px; /* Mengatur padding tombol */
